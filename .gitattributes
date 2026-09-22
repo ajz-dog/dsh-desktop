@@ -1,0 +1,10 @@
+# Line endings are load-bearing in this project:
+#   * .cmd MUST be CRLF - cmd.exe mis-parses ( ) blocks when they are LF-only
+#   * everything else is LF, matching what build.py writes, so a fresh clone
+#     reproduces dist/ byte for byte
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Keep the generated installer out of diffs-as-noise only where it is binary;
+# it is text, so leave it diffable.
